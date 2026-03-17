@@ -1,46 +1,61 @@
 <mvc:View controllerName="com.pjnamespace.project1.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form">
- 
-       <Page id="page" title="{i18n>title}">
- 	        <content>
- 	            <Table items="{oModel>/Travel}" >
-    <headerToolbar>
-        <Toolbar design="Solid">
-            <Title text="Travel Data for PJ"></Title>
-        </Toolbar>
-    </headerToolbar>
-
-    <columns>
-        <Column>
-            <Text text="Travel Id"></Text>
-        </Column>
-        <Column>
-            <Text text="Agency ID"></Text>
-        </Column>
-         <Column>
-            <Text text="Customer ID"></Text>
-        </Column>
-    </columns>
-
-    <items>
-        <ColumnListItem>
-            <cells>
-                <Text text="{oModel>TravelID}"/>
-                <Text text="{oModel>AgencyID}"/>
-                <Text text="{oModel>CustomerID}"/>
-                
-            </cells>
-        </ColumnListItem>
-    </items>
-</Table>
- 	        </content>
- 	        <footer>
- 	            <Bar >
- 	                <contentRight></contentRight>
- 	            </Bar>
- 	        </footer>
-
-    </Page>
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="page" title="{i18n>title}">
+		<content>
+			<Table items="{oModel>/Travel}" >
+				<headerToolbar>
+					<Toolbar design="Solid">
+						<Title text="Travel Data for PJ"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Travel Id"></Text>
+					</Column>
+					<Column>
+						<Text text="Agency ID"></Text>
+					</Column>
+					<Column>
+						<Text text="Customer ID"></Text>
+					</Column>
+					<Column>
+						<Text text="begin date"></Text>
+					</Column>
+					<Column>
+						<Text text="End Date"></Text>
+					</Column>
+					<Column>
+						<Text text="description"></Text>
+					</Column>
+					<Column>
+						<Text text="Status"></Text>
+					</Column>
+					<Column>
+						<Text text="Created By"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{oModel>TravelID}"/>
+							<Text text="{oModel>AgencyID}"/>
+							<Text text="{oModel>CustomerID}"/>
+							<Text text="{oModel>BeginDate}"/>
+							<Text text="{oModel>EndDate}"/>
+							<ObjectStatus text="{oModel>Description}" state="{path:'oModel>Description',formatter:'.f.FormatDes'}" ></ObjectStatus>
+							<Text text="{path:'oModel>Status',formatter:'.f.FormatStatus' }"/>
+							<Text text="{oModel>Createdby}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<Bar >
+				<contentRight></contentRight>
+			</Bar>
+		</footer>
+	</Page>
 </mvc:View>
