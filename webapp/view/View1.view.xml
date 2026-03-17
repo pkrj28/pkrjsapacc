@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.pjnamespace.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+ 
+       <Page id="page" title="{i18n>title}">
+ 	        <content>
+ 	            <Table items="{oModel>/Travel}" >
+    <headerToolbar>
+        <Toolbar design="Solid">
+            <Title text="Travel Data for PJ"></Title>
+        </Toolbar>
+    </headerToolbar>
+
+    <columns>
+        <Column>
+            <Text text="Travel Id"></Text>
+        </Column>
+        <Column>
+            <Text text="Agency ID"></Text>
+        </Column>
+         <Column>
+            <Text text="Customer ID"></Text>
+        </Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{oModel>TravelID}"/>
+                <Text text="{oModel>AgencyID}"/>
+                <Text text="{oModel>CustomerID}"/>
+                
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+ 	        </content>
+ 	        <footer>
+ 	            <Bar >
+ 	                <contentRight></contentRight>
+ 	            </Bar>
+ 	        </footer>
+
+    </Page>
+</mvc:View>
