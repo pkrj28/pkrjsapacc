@@ -8,6 +8,15 @@ function (Controller,formatter)  {
     return Controller.extend("com.pjnamespace.project1.controller.View1", {
         f:formatter,
         onInit() {
+        },
+        
+     onSubmit: function () {
+    
+       var select = this.getView().byId("select").getSelectedKey();
+       var combo = this.getView().byId("combo").getSelectedKeys();
+       var radio = this.getView().byId("radio").getSelectedIndex();
+
+
         }
     });
 });
