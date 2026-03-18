@@ -32,21 +32,17 @@
 					<Column>
 						<Text text="Status"></Text>
 					</Column>
-					<Column>
-						<Text text="Created By"></Text>
-					</Column>
 				</columns>
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{oModel>TravelID}"/>
-							<Text text="{oModel>AgencyID}"/>
-							<Text text="{oModel>CustomerID}"/>
+							<Text text="{oModel>TravelId}"/>
+							<Text text="{oModel>AgencyId}"/>
+							<Text text="{oModel>CustomerId}"/>
 							<Text text="{oModel>BeginDate}"/>
 							<Text text="{oModel>EndDate}"/>
 							<ObjectStatus text="{oModel>Description}" state="{path:'oModel>Description',formatter:'.f.FormatDes'}" ></ObjectStatus>
 							<Text text="{path:'oModel>Status',formatter:'.f.FormatStatus' }"/>
-							<Text text="{oModel>Createdby}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
