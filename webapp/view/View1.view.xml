@@ -1,74 +1,28 @@
-<mvc:View xmlns:richtexteditor="sap.fe.macros.richtexteditor" xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project1.controller.View1"
+<mvc:View
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+	xmlns:core="sap.ui.core" controllerName="com.pjnamespace.project1.controller.View1"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
 	xmlns:f="sap.ui.layout.form"
 	>
 	<Page id="page" title="{i18n>title}">
 		<content>
-		<!--Multivalue UI elementcheck below  select combobox-->
-<f:SimpleForm title="Multivalue UI element" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="5" 
-emptySpanM="5">
-	<f:content>
-		<Label text="I am select box"></Label>
-		<Select id="select" items="{oModel>/Travel}" change="onSubmit">
-			<items>
-				<core:Item text="{oModel>TravelId}" key="{oModel>TravelId}" ></core:Item>
-			</items>
-		</Select>
-		<Label text="I am combo box"></Label>
-		<ComboBox id="combo"  items="{oModel>/Travel}">
-			<items>
-				<core:Item text="{oModel>CustomerId}" ></core:Item>
-			</items>
-		</ComboBox>
-		<Label text="I am multi combo box"></Label>
-		<MultiComboBox id="multicombo"  items="{oModel>/Travel}" >
-			<items>
-				<core:Item text="{oModel>CustomerId}" ></core:Item>
-			</items>
-		</MultiComboBox>
-		        <Label text="I rediobutton group"></Label>
-        <RadioButtonGroup id="radio"  buttons="{oModel>/Travel}" columns="5" select="">
-        <buttons>
-            <RadioButton text="{oModel>/CustomerId}" />
-        </buttons>
-        </RadioButtonGroup >
-
-      <Button text="Submit" type="Emphasized" press="onSubmit" ></Button>
-	</f:content>
-</f:SimpleForm>
-
-
-	<!--Multivalue UI element End -->
-
-
-
-
-
-
-
-            <!-- List UI element please check below -->
-			<!-- <List items="{oModel>/Travel}" >
-				<headerToolbar>
-					<Toolbar design="Solid">
-						<Title text="Travel Data for PJ"></Title>
-					</Toolbar>
-				</headerToolbar>
-				<items>
-					<ObjectListItem title="{oModel>TravelId}" number="{oModel>AgencyId}">
-						<attributes>
-							<ObjectAttribute title="Customer ID" text="{oModel>CustomerId}"></ObjectAttribute>
-							<ObjectAttribute title="Begin Date" text="{oModel>BeginDate}"></ObjectAttribute>
-						</attributes>
-					</ObjectListItem>
-				</items>
-			</List > -->
-  <!-- List UI element-->
-
-
-  <!-- Table UI element please check below -->
-
-			<!-- <Table items="{oModel>/Travel}" >
+		<Panel expandable="true" expanded="true">
+			<f:SimpleForm title="Travel Details" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" emptySpanL="6" 
+																											emptySpanM="6">
+				<f:content>
+				<Label text="CustomerID"></Label>
+				<Input id="customer"></Input>
+				<Label text="Agency ID"></Label>
+				<Input id="agency"></Input>
+				<FlexBox justifyContent="End">
+				<Button text="Go" type="Accept" icon="sap-icon://accept" press="onGo"></Button>
+				<Button text="Reset" type="Reject" icon="sap-icon://reject" press="onReset"></Button>
+			</FlexBox>
+			</f:content>
+			</f:SimpleForm>
+            </Panel>
+			<Table items="{/Travel}" class="sapUitinyMarginTop" id="table" >
 				<headerToolbar>
 					<Toolbar design="Solid">
 						<Title text="Travel Data for PJ"></Title>
@@ -100,18 +54,18 @@ emptySpanM="5">
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{oModel>TravelId}"/>
-							<Text text="{oModel>AgencyId}"/>
-							<Text text="{oModel>CustomerId}"/>
-							<Text text="{oModel>BeginDate}"/>
-							<Text text="{oModel>EndDate}"/>
-							<ObjectStatus inverted="true" text="{oModel>Description}" state="{path:'oModel>Description',formatter:'.f.FormatDes'}" ></ObjectStatus>
-							<Text text="{path:'oModel>Status',formatter:'.f.FormatStatus' }"/>
+							<Text text="{TravelId}"/>
+							<Text text="{AgencyId}"/>
+							<Text text="{CustomerId}"/>
+							<Text text="{BeginDate}"/>
+							<Text text="{EndDate}"/>
+							<Text text="{Description}"/>
+							<Text text="{Status}"/>
+							
 						</cells>
 					</ColumnListItem>
 				</items>
-			</Table> -->
-  <!-- Table UI element end -->
+			</Table>
 		</content>
 		<footer>
 			<Bar >

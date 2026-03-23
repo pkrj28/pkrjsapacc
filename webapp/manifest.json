@@ -72,7 +72,7 @@
           "bundleName": "com.pjnamespace.project1.i18n.i18n"
         }
       },
-      "oModel": {
+      "": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
