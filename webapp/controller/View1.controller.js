@@ -9,7 +9,7 @@ function (Controller, formatter, Filter, FilterOperator) {
 
     return Controller.extend("com.pjnamespace.project1.controller.View1", {
 
-        formatter: formatter,
+        f: formatter,
 
         onInit: function () {
         },
@@ -31,6 +31,12 @@ function (Controller, formatter, Filter, FilterOperator) {
         onReset: function () {
             this.byId("customer").setValue("");
             this.byId("agency").setValue("");
+        },
+        onpressrow: function(oEvent) {
+        var Traid = oEvent.getSource().getBindingContext().getProperty("TravelId");
+       // this.byId("SF").bindElement("/Travel('"+Traid+"')");
+      this.getOwnerComponent().getRouter().navTo("RouteView2",{key:Traid});
+     
         }
 
     });

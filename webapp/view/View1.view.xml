@@ -22,7 +22,7 @@
 			</f:content>
 			</f:SimpleForm>
             </Panel>
-			<Table items="{/Travel}" class="sapUitinyMarginTop" id="table" >
+			<Table items="{/Travel}" class="sapUitinyMarginTop" id="table">
 				<headerToolbar>
 					<Toolbar design="Solid">
 						<Title text="Travel Data for PJ"></Title>
@@ -52,13 +52,15 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem>
+					<ColumnListItem type="Navigation" press="onpressrow">
 						<cells>
 							<Text text="{TravelId}"/>
 							<Text text="{AgencyId}"/>
 							<Text text="{CustomerId}"/>
-							<Text text="{BeginDate}"/>
-							<Text text="{EndDate}"/>
+                            <!-- <Text text="{BeginDate}" /> -->
+							<Text text="{path:'BeginDate',formatter:'.f.formatDate'}"/>		
+							<Text text="{path:'EndDate',formatter:'.f.formatDate1'}"/>		
+							<!-- <Text text="{EndDate}"/> -->
 							<Text text="{Description}"/>
 							<Text text="{Status}"/>
 							
@@ -66,6 +68,7 @@
 					</ColumnListItem>
 				</items>
 			</Table>
+		
 		</content>
 		<footer>
 			<Bar >

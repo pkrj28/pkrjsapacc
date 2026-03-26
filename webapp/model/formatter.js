@@ -15,7 +15,29 @@ function () {
        FormatDes: function(Description){
         if(Description==="Vacation"){
             return "Error";
-        }       
         }
+        },
+
+        formatDate: function (BeginDate) {
+            if (!BeginDate) {
+                return "";
+            }
+            var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+                pattern: "dd-MM-yyyy"
+            }, sap.ui.getCore().getConfiguration().getLocale());
+
+            return oDateFormat.format(BeginDate);
+},
+        formatDate1: function (EndDate) {
+            if (!EndDate) {
+                return "";
+            }
+            var oDateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+                pattern: "dd-MM-yyyy"
+            }, sap.ui.getCore().getConfiguration().getLocale());
+
+            return oDateFormat.format(EndDate);
+}
+    
     };
 });
